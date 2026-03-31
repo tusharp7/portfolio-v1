@@ -57,46 +57,71 @@ function App() {
           <div className="hero-copy">
             <p className="eyebrow">{portfolio.title}</p>
             <h1>
-              {portfolio.name.split(" ")[0]} <span>{portfolio.name.split(" ").slice(1).join(" ")}</span>{" "}
-              builds fast, practical products with clean engineering behind them.
+              Tushar Birajdar
+              <span> software engineer building practical systems.</span>
             </h1>
             <p className="hero-text">{portfolio.intro}</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projects">
-                View Projects
+                Selected Work
               </a>
               <a className="button button-secondary" href="/resume">
-                Download Resume
+                Resume
               </a>
             </div>
           </div>
 
-          <aside className="hero-card">
-            {portfolio.stats.map((stat) => (
-              <div className="hero-stat" key={stat.value}>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </div>
-            ))}
+          <aside className="hero-panel">
+            <div className="hero-panel-block">
+              <p className="section-label">Currently</p>
+              <h2>Bitwise</h2>
+              <p>Programmer Trainee building ETL pipelines and analytics workflows.</p>
+            </div>
+            <div className="hero-panel-block">
+              <p className="section-label">Education</p>
+              <h3>{portfolio.education.school}</h3>
+              <p>{portfolio.education.degree}</p>
+              <p>{portfolio.education.duration}</p>
+            </div>
           </aside>
         </section>
 
-        <section className="section about-grid" id="about">
-          <div>
+        <section className="section stat-strip">
+          {portfolio.stats.map((stat) => (
+            <article className="stat-card" key={stat.value}>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </article>
+          ))}
+        </section>
+
+        <section className="section split-section" id="about">
+          <div className="section-heading sticky-title">
             <p className="section-label">About</p>
-            <h2>A builder who likes both systems and speed.</h2>
+            <h2>Focused on shipping clean, useful software.</h2>
           </div>
-          <div className="about-copy">
+          <div className="stacked-copy">
             {portfolio.summary.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            <div className="outline-card">
+              <p className="mini-label">Core Areas</p>
+              <div className="chip-list">
+                <span>Data Engineering</span>
+                <span>React</span>
+                <span>Node.js</span>
+                <span>PySpark</span>
+                <span>Automation</span>
+                <span>System Design</span>
+              </div>
+            </div>
           </div>
         </section>
 
         <section className="section" id="experience">
           <div className="section-heading">
             <p className="section-label">Experience</p>
-            <h2>Industry experience across data workflows and automation.</h2>
+            <h2>Work across analytics, automation, and product engineering.</h2>
           </div>
 
           <div className="timeline">
@@ -125,7 +150,7 @@ function App() {
         <section className="section" id="projects">
           <div className="section-heading">
             <p className="section-label">Projects</p>
-            <h2>Selected work across collaboration, mobile, and real-time systems.</h2>
+            <h2>Selected work with real-time interaction and product thinking.</h2>
           </div>
 
           <div className="project-grid">
@@ -142,17 +167,23 @@ function App() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
+                <div className="project-links">
+                  {project.links.map((link) => (
+                    <a key={`${project.name}-${link.url}`} href={link.url} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="section metrics-section">
-          <div className="section-heading">
+        <section className="section split-section">
+          <div className="section-heading sticky-title">
             <p className="section-label">Highlights</p>
-            <h2>Competitive coding, recognition, and leadership.</h2>
+            <h2>Recognition through coding, projects, and leadership.</h2>
           </div>
-
           <div className="metrics-grid">
             {portfolio.achievements.map((achievement) => (
               <article className="metric-card" key={achievement.title}>
@@ -166,7 +197,7 @@ function App() {
         <section className="section skills-section">
           <div className="section-heading">
             <p className="section-label">Skills</p>
-            <h2>Tools and technologies I work with.</h2>
+            <h2>Tools and technologies I use regularly.</h2>
           </div>
 
           <div className="skills-list">
@@ -182,7 +213,7 @@ function App() {
         <section className="section contact-section" id="contact">
           <div className="contact-copy">
             <p className="section-label">Contact</p>
-            <h2>Let&apos;s build something useful.</h2>
+            <h2>Open to useful work and ambitious teams.</h2>
             <p>
               I&apos;m interested in software engineering, data engineering, and
               product-focused developer roles.
@@ -191,9 +222,6 @@ function App() {
 
           <div className="contact-card">
             <a href={`mailto:${portfolio.contact.email}`}>{portfolio.contact.email}</a>
-            <a href={`tel:${portfolio.contact.phone.replace(/\s+/g, "")}`}>
-              {portfolio.contact.phone}
-            </a>
             <a href={portfolio.contact.linkedin} target="_blank" rel="noreferrer">
               LinkedIn
             </a>
