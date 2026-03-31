@@ -98,7 +98,7 @@ const portfolio = {
       links: [
         {
           label: "GitHub",
-          url: "https://github.com/tusharp7/Handicraft_Haven"
+          url: "https://github.com/tusharp7/Judge-Assist"
         }
       ]
     },
