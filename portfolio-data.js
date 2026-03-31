@@ -98,7 +98,7 @@ const portfolio = {
       links: [
         {
           label: "GitHub",
-          url: "https://github.com/tusharp7"
+          url: "https://github.com/tusharp7/Handicraft_Haven"
         }
       ]
     },
