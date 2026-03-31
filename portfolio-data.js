@@ -75,6 +75,10 @@ const portfolio = {
       ],
       links: [
         {
+          label: "Live",
+          url: "https://collab-board1.vercel.app/"
+        },
+        {
           label: "Source",
           url: "https://github.com/tusharp7/CollabBoard-"
         }
@@ -95,6 +99,24 @@ const portfolio = {
         {
           label: "GitHub",
           url: "https://github.com/tusharp7"
+        }
+      ]
+    },
+    {
+      name: "Handicraft Haven",
+      stack: "Web App, Marketplace Experience",
+      date: "Project",
+      description:
+        "A handcrafted products platform focused on presenting artisan work through a clean shopping and discovery experience.",
+      bullets: [
+        "Built as a dedicated product experience around handcrafted goods.",
+        "Focused on browsing, presentation, and storefront-style interactions.",
+        "Included as a portfolio project with its public source repository."
+      ],
+      links: [
+        {
+          label: "Source",
+          url: "https://github.com/tusharp7/Handicraft_Haven"
         }
       ]
     }
